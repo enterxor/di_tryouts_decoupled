@@ -12,7 +12,7 @@ from .analytics.containers import AnalyticsContainer
 
 class ApplicationContainer(containers.DeclarativeContainer):
 
-    config = providers.Configuration(ini_files=["config.ini"])
+    config = providers.Configuration(yaml_files=["./config.yml"])
 
     sqlite = providers.Singleton(sqlite3.connect, config.database.dsn)
 
@@ -25,7 +25,7 @@ class ApplicationContainer(containers.DeclarativeContainer):
 
     user_package = providers.Container(
         UserContainer,
-        database=sqlite,
+        database=config.database.dsn,
     )
 
     photo_package = providers.Container(

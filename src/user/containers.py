@@ -14,5 +14,5 @@ class UserContainer(containers.DeclarativeContainer):
     user_repository = providers.Singleton(
         repositories.UserRepository,
         entity_factory=user.provider,
-        db=database,
+        db=database
     )
