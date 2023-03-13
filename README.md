@@ -1,2 +1,5 @@
-# di_tryouts_decoupled
-Attempt to use Dependency Injection library in pure Python project
+# Examples of using Dependency Injector library in python
+
+There are several subprojects:
+- decoupled packages
+- flask app
